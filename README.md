@@ -2,7 +2,7 @@
 
 <img src="https://i.gyazo.com/50f30fd3cd9ba2f62c948ab3e844b377.png" width="713" height="221" alt="toio for processing">
 
-Processingでtoioを使うためのコードです。toioとのBLE通信を行うにあたり、Scratch Linkを仲介しています。
+Processingでtoioを使うためのコードです。toioとのBLE通信を行うにあたり、Scratch Linkを仲介しています。<br>
 現状でライブラリ（JAR）化してませんので、同根されているCube.pdeをライブラリ代わりに使ってください。
 <br>
 <br>
@@ -16,7 +16,7 @@ v1.3.66以上をインストールしてください。<br>
 
 ### Websockets for Processing
 - [Websockets for Processing](https://github.com/alexandrainst/processing_websockets) <br>
-現状のリリース版（V1.0）はSSL通信に対応していないため、動きません。現在masterに上がっているコードはSSL対応になっていますので、プロジェクトページの「Code」→「Download ZIP」からファイルをダウンロードし、手動でインストールしてください。
+Processing用のWebSocketライブラリです。現状のリリース版（V1.0）はSSL通信に対応していないため、動きません（※2021年1月7日現在、ProcessingのContribution Managerからインストールされるのもこのバージョンです）。現在masterに上がっているコードはSSL対応になっていますので、プロジェクトページの「Code」→「Download ZIP」からファイルをダウンロードし、手動でインストールしてください。
 <br><br>
 
 ## サンプルコード
@@ -44,5 +44,46 @@ v1.3.66以上をインストールしてください。<br>
 - 1,2,3,4,5,6,7,8,9,0,-キーでサウンド再生
 <br>
 <img src="https://i.gyazo.com/52eb2b06cb815e489e33778bb9793a54.gif" alt="moveTo_by_click" width="450"/><br>
+
+
+
+## API
+toioのすべての機能を網羅しているわけではありませんが、簡単なプロトタイピングに必要な機能を最低限実装しておきました。
+
+```
+// インスタンス生成（自動的に接続を始めます）
+Cube cube = new Cube(this);
+
+// 接続先検索中フラグ
+if ( cube.searching ) println("searching cube");
+
+// 接続トライ中フラグ
+if ( cube.try_connect ) println("trying to connect");
+
+// 接続完了フラグ（※切断検知は実装されていません）
+if ( cube.connected ) println("cube is connected");
+
+// マット上の位置と角度
+println( cube.x, cube.y, cube.angle );
+
+// モータ制御（連続動作）
+cube.move(left_speed, right_speed);
+
+// 時間指定付きモータ制御
+cube.move(left_speed, right_speed, time_x100ms);
+
+// 目標指定付きモータ制御（角度指定なし）
+cube.moveTo(x, y, max_speed);
+
+// 目標指定付きモータ制御（角度指定なし、速度タイプ指定あり）
+cube.moveTo(x, y, max_speed, move_type, speed_type);
+
+// 目標指定付きモータ制御（角度指定あり）
+cube.moveTo(x, y, max_speed, angle, move_type, speed_type, angle_type);
+
+// サウンド再生
+cube.playSound(sound_id, volume);
+```
+
 
 
