@@ -18,7 +18,7 @@ void draw() {
   textSize(20);
   fill(255);
   text("move : UP, DOWN, LEFT, RIGHT", 30, 30 );
-  text("go to destinatin : mouse click", 30, 55 ); 
+  text("go to the destination : mouse click", 30, 55 ); 
   text("play sound : 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, - ", 30, 80 );
 
   fill(255, 255, 0);
