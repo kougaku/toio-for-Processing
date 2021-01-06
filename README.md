@@ -10,7 +10,7 @@ Processingでtoioを使うためのコードです。toioとのBLE通信を行�
 Scratch Link と Websockets for Processing のインストールが必要です。
 
 ### Scratch Link
-v1.3.66以上をインストールしてください。<br>
+v1.3.66以上をインストールしてください。Processingのスケッチを実行する際は、Scratch Linkを起動しておいてください。<br>
 - Mac版： https://downloads.scratch.mit.edu/link/mac.zip <br>
 - Windows版： https://downloads.scratch.mit.edu/link/windows.zip <br>
 
