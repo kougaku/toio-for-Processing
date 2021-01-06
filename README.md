@@ -1,6 +1,6 @@
 # toio for Processing
 
-<img src="https://i.gyazo.com/50f30fd3cd9ba2f62c948ab3e844b377.png" width="713" height="221" alt="toio for processing">
+<img src="https://i.gyazo.com/50f30fd3cd9ba2f62c948ab3e844b377.png" width="713" alt="toio for processing">
 
 Processingでtoioを使うためのコードです。toioとのBLE通信を行うにあたり、Scratch Linkを仲介しています。<br>
 現状でライブラリ（JAR）化してませんので、同根されているCube.pdeをライブラリ代わりに使ってください。
