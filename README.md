@@ -50,7 +50,7 @@ Processing用のWebSocketライブラリです。現状のリリース版（V1.0
 ## API
 toioのすべての機能を網羅しているわけではありませんが、簡単なプロトタイピングに必要な機能を最低限実装しておきました。
 
-```
+```java
 // インスタンス生成（自動的に接続を始めます）
 Cube cube = new Cube(this);
 
@@ -63,7 +63,7 @@ if ( cube.try_connect ) println("trying to connect");
 // 接続完了フラグ（※切断検知は実装されていません）
 if ( cube.connected ) println("cube is connected");
 
-// マット上の位置と角度
+// キューブの位置と角度
 println( cube.x, cube.y, cube.angle );
 
 // モータ制御（連続動作）
