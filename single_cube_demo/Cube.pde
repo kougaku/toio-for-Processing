@@ -62,7 +62,8 @@ public class Cube {
   public Cube(PApplet parent) {
     this.parent = parent;
     this.proxy = new Proxy();
-    this.ws = new WebsocketClient(proxy, "wss://device-manager.scratch.mit.edu:20110/scratch/ble");
+    // this.ws = new WebsocketClient(proxy, "wss://device-manager.scratch.mit.edu:20110/scratch/ble");
+    this.ws = new WebsocketClient(proxy, "ws://127.0.0.1:20111/scratch/ble"); // for Scratch Link v1.4    
     parent.registerMethod("dispose", this);
 
     // discover後自動的に接続シーケンスに入るしくみ。
